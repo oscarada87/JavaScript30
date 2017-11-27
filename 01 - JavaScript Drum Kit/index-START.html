@@ -68,15 +68,17 @@
   }
 
   function removeTransition(e){
-    if (!this.classList.contains('playing')) return;  //Skip掉除了transform以外的屬性
-    this.classList.remove('playing')
-  }
+    if (this.classList.contains('playing')) {     //Skip掉除了transform以外的屬性
+        this.classList.remove('playing');
+        }
+    }
+
+
 
   const keys = document.querySelectorAll('.key');
   keys.forEach(key => key.addEventListener('transitionend', removeTransition));
 
   window.addEventListener('keydown' , playSound);
-
 
 
 </script>
