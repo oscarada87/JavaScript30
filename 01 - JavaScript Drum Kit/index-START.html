@@ -68,7 +68,7 @@
   }
 
   function removeTransition(e){
-    if (e.propertyName !== 'transform') return;  //Skip掉除了transform以外的屬性
+    if (!this.classList.contains('playing')) return;  //Skip掉除了transform以外的屬性
     this.classList.remove('playing')
   }
 
